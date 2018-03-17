@@ -1,0 +1,62 @@
+<h2>Réservation d'une table pour : 
+<?php //echo  $oUser->getUserId(); ?>
+</h2>
+<table>
+<form action="" method="post" name="booking">
+		<tr>
+		<td><label for="date">Date</label></td>
+		<td>
+			<input type="date" name="date">
+		</td>
+
+		<td><label for="date">Heure</label></td>
+		<td>
+		<select name="heure">
+			<?php for ($i=12; $i <= 22 ; $i++) { ?>
+				<option>
+				<?php echo $i;?>
+					
+				</option>
+			<?php } ?>
+		</select>
+		<select name="minute">
+			<?php for ($i=0; $i <= 45 ;$i+=15) { ?>
+				<option>
+
+				<?php if ($i==0) {
+					echo '00';
+				} else {
+					echo $i;
+				};?>
+					
+				</option>
+			<?php } ?>
+		</select>
+			
+		</td>
+
+
+
+	</tr>
+
+	<tr>
+		<td><label for="nb_couverts">Nombre de couverts</label></td>
+		<td>
+
+		<select name="nb_couverts">
+			<?php for ($i=1; $i <= 10 ;$i++) { ?>
+				<option value="<?php echo $i;?>">
+					<?php echo $i;?>
+					
+				</option>
+			<?php } ?>
+		</select>
+
+
+
+		</td>
+	</tr>
+	<tr><td></td><td><input type="submit" name="réserver"></td></tr>
+
+</form>
+</table>

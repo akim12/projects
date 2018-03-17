@@ -1,0 +1,28 @@
+FrontController.class.php
+-------------------------
+
+		if(array_key_exists('_raw_template', $this->viewData['variables']) == true)
+        {
+            unset($this->viewData['variables']['_raw_template']);
+
+            // Load the template directly, bypassing the layout.
+            /** @noinspection PhpIncludeInspection */
+            include $this->viewData['template'];
+        }
+        else if(array_key_exists('_default_layout', $this->viewData['variables']) == true){
+            include WWW_PATH.'/'.$this->viewData['variables']['_default_layout'];
+        }
+        else
+        {
+            // Load the layout which then loads the template.
+            include WWW_PATH.'/LayoutView.phtml';
+        }
+        
+        
+AdminController.class.php
+-------------------------
+
+ 		return [
+            'meals'=>$query,
+            '_default_layout' => "layout/LayoutAdminView.phtml"
+        ];

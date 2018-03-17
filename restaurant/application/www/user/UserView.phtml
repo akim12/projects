@@ -1,0 +1,47 @@
+<form method="POST" action="#">
+
+    <fieldset>
+
+    <legend>Votre identité</legend>
+
+    <input type="text" name="prenom" id="prenom" placeholder="prénom" required>
+
+    <p> <input type="text" name="nom" id="nom" placeholder="nom" required></p>
+
+    <p> <input type="date" name="date_naissance" id="anniv" placeholder="JJ-MM-AAAA" required></p>
+
+    </fieldset>
+
+    <fieldset>
+
+    <legend>Vos coordonnées</legend>
+
+    <p> <input type="tel" name="telephone" id="tel" pattern="[0-9]{10}" required placeholder="06........">
+
+    <input type="text" name="email" id="email" placeholder="email ..@....">
+
+    </p>
+
+    <p> <textarea type="text" name="adresse" id="adresse" placeholder="adresse" required></textarea>
+
+    </p>
+
+    <p> <input type="text" name="code_postal" pattern="[0-9]{5}" required id="codepostal" placeholder="code postal"> 
+    <input type="text" name="ville" id="ville" placeholder="ville" required> 
+
+    <input type="text" name="pays" id="pays" placeholder="pays" required>
+
+    </p>
+
+    </fieldset>
+
+    <fieldset>
+
+    <legend>Création d'un espace</legend>
+
+                <input type="password" name="password" id="mdp" required placeholder="mot de passe">
+
+     </fieldset>
+     <input type="submit" value="Envoyer" />
+
+        </form>

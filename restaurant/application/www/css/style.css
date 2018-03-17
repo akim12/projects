@@ -1,0 +1,28 @@
+ul{list-style-type: none;margin: 0}
+
+.container {
+  	display: flex; /* or inline-flex */
+  	justify-content: space-around;
+  	align-items:flex-start;
+  	max-width:1800px;
+  	box-sizing: border-box;
+  	flex-wrap: wrap;
+}
+.products{
+	width: 200px;
+	border:1px solid grey;
+	overflow: hidden;
+
+}
+.products img{
+	width: 100%;
+}
+.basket_title h2, .basket_title p { margin:0; margin-left: 20px;}
+.SalePrice{ font-size: 1.5em; }
+ul{margin:0;padding:0;}
+ul li{padding:10px 20px;}
+.container_Form {margin: 20px;}
+input{height: 50px;padding: 10px; margin-left: 10px;}
+textarea{width: 300px; height: 300px;}
+
+td{ padding: 20px; }

@@ -1,0 +1,50 @@
+<h2>Administration du site</h2>
+<h3>Gestions des produits</h3>
+<ul class="link-list">
+	<li><i class="fa fa-plus-circle"> </i> 
+<a href="<?= $requestUrl; ?>/admin/addproduct" id="validate_order">
+	Ajouter un produit</li>
+</a>
+	<li>
+  <a href="<?= $requestUrl.'/admin/booking';?>">
+    Réservations
+    </a>
+
+    </li>
+
+</ul>
+<table class="generic-table">
+    	<thead>
+    		<tr>
+            	<th></th><th>Désignation</th><th>Prix</th><th>Qté</th>
+            </tr>
+        </thead>
+        <tbody>
+        	<?php foreach ($meals as $meal) : ?>
+    		<tr class="update" data-id="<?= $meal['Id'] ?>" data-del=>
+            	<td>
+                	<img src="<?= $wwwUrl.'/images/meals/'.$meal['Photo']; ?>" width="100" />
+                </td>
+                <td><?= htmlspecialchars($meal['Name']); ?></td>
+                <td><?= number_format($meal['SalePrice'],2,',',' '); ?> €</td>
+                <td><?= number_format($meal['QuantityInStock']); ?> </td>
+                <td>
+                    <a href="<?= $requestUrl.'/admin?delProd='.
+                    $meal['Id']; ?>">
+                    <i  class="fa fa-trash-o fa-2x deleteProd" aria-hidden="true"></i>
+                    </a>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </tbody>    
+        <tfoot>
+    		<tr>
+            	<th colspan="4">Total : </th><th></th>
+            </tr>
+        </tfoot>
+    </table>
+
+
+
+
+

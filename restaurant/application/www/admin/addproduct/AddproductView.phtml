@@ -1,0 +1,46 @@
+<h2>AJOUTER UN PRODUIT</h2>
+<table border="1">
+<form action="" method="post" name="addproduct_form" enctype="multipart/form-data" >
+	
+<tr>
+	<td><label for="name">name : </label></td>
+	<td>
+		<input type="text" name="name" value="<?php 
+		if (isset($idProd)){echo $meal['Name'];} ?>">
+		<input type="hidden" name="idProd" value="<?php 
+		if (isset($idProd)){echo $meal['Id'];} ?>">
+	</td>
+</tr>
+<tr>
+	<td></td>
+	<td><?php if (isset($idProd)){ echo '<img src="'.$wwwUrl.'/images/meals/'.$meal['Photo'].'">';} ?></td>
+</tr>
+
+<tr>
+	<td><label for="photo">photo : </label></td>
+	<td><input type="file" name="image"></td>
+</tr>
+<tr>
+	<td><label for="description">description :</label></td>
+	<td>
+	<textarea name="description" ><?php if (isset($idProd)){echo $meal['Description'];} ?></textarea></td>
+</tr>
+<tr>
+	<td><label for="name">qte : </label></td>
+	<td><input type="text" name="qte" value="<?php if (isset($idProd)){echo $meal['QuantityInStock'];} ?>"></td>
+</tr>
+<tr>
+	<td><label for="buyPrice">buyPrice : </label></td>
+	<td><input type="text" name="buyPrice" value="<?php if (isset($idProd)){echo $meal['BuyPrice'];} ?>"></td>
+</tr>
+<tr>
+	<td><label for="salePrice">salePrice : </label></td>
+	<td><input type="text" name="salePrice" value="<?php if (isset($idProd)){echo $meal['SalePrice'];} ?>"></td>
+</tr>
+<tr>
+	<td height="100">
+	<td><input type="submit" name="envoyer"></td>
+</tr>
+
+</form>
+</table>

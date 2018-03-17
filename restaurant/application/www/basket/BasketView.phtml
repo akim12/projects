@@ -1,0 +1,49 @@
+<h2>Mon panier</h2>
+<?php if(count($aProducts) == 0) : ?>
+	<div class="">Votre panier est vide</div>
+<?php else : ?>
+	<table class="generic-table">
+    	<thead>
+    		<tr>
+            	<th></th><th>Désignation</th><th>Prix Unitaire</th><th>Quantité</th><th>Prix Total</th>
+            </tr>
+        </thead>
+        <tbody>
+        	<?php 
+            	$montantSuperTotal = 0;
+            	foreach ($aProducts as $aProduct) : 
+
+                    $montantTotal = $aProduct['Quantite']*$aProduct['SalePrice'];
+                    $montantSuperTotal += $montantTotal;
+            ?>
+    		<tr>
+            	<td>
+                	<img src="<?= $wwwUrl.'/images/meals/'.$aProduct['Photo']; ?>" width="100" />
+                </td>
+                <td><?= htmlspecialchars($aProduct['Name']); ?></td>
+                <td><?= number_format($aProduct['SalePrice'],2,',',' '); ?> €</td>
+                <td><?= htmlspecialchars($aProduct['Quantite']); ?></td>
+                <td><?= number_format($montantTotal,2,',',' '); ?> €</td>
+                <td >
+                    <i data-id="<?= $aProduct['Id'] ?>" class="fa fa-trash-o fa-2x deleteProd" aria-hidden="true"></i>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+
+        </tbody>
+        
+        <tfoot>
+    		<tr>
+            	<th colspan="4">Total : </th><th><?= number_format($montantSuperTotal,2,',',' '); ?> €</th>
+            </tr>
+            <tr>
+                <td colspan="5">
+                     <a href="<?= $requestUrl; ?>/validate?order=validate" id="validate_order">valider ma commande</a>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+<?php endif; ?>
+
+

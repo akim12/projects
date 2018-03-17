@@ -1,0 +1,55 @@
+<!-- Message de notification -->
+
+<!-- Code HTML à écrire -->
+
+<!-- Message de notification -->
+<div>
+<?php if($flashBag->hasMessages() == true): ?>
+    <aside id="notice" class="notice">
+        <?php foreach($flashBag->fetchMessages() as $message): ?>
+            <p><?= $message ?></p>
+        <?php endforeach ?>
+    </aside>
+<?php endif; ?>
+</div>
+<?php
+    if ($userSession->isAuthenticated()) {
+       echo 'Bienvenue '.$userSession->getFullName(); 
+    }
+?>
+
+<!-- Liste des aliments -->
+<table class="generic-table meal-list">
+    <caption>Carte du restaurant</caption>
+    <tbody>
+        <!-- Code HTML à écrire -->
+        <div class="container">
+	        <?php 
+	        foreach ($meals as $key => $meal) { ?>
+	         <div class="products">
+	      	  <ul>
+	     	   <li><?//= $value['Id'];?></li>
+		       <li>
+					<h3><?= htmlspecialchars($meal['Name']);?></h3>
+		       </li>
+		       <li>
+		       <img src="<?= $wwwUrl ?>/images/meals/<?= $meal['Photo'];?>"  alt="3WA Restaurant">
+		       </li>
+		       <li id="description">
+					<?= htmlspecialchars($meal['Description']);?>
+		       	</li>
+		       <li><?= $meal['QuantityInStock'];?></li>
+		       <li>
+					<?//= $value['BuyPrice'];?>
+		       	</li>
+		       <li>
+		       <?= number_format($meal['SalePrice'],2,',',' ').' €'; ?>
+		       </li>
+			</ul>
+        
+		</div>
+		<?php } ?>
+		</div>
+
+    </tbody>
+</table>
