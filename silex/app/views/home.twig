@@ -1,0 +1,25 @@
+{% extends "layout.twig" %}
+
+
+{% block title %}{{ parent() }} - Page d'accueil{% endblock %}
+
+
+
+
+
+
+{% block content %}
+
+<form action="index.php/testPageForm" method="post">
+	<p>
+    	<label>Nom : <input type="text" name="lastname" /></label>
+    </p>
+    <p>
+		<label>Prénom : <input type="text" name="firstname" /></label>
+    </p>
+    <p>
+    	<input type="submit" value="Tester Silex" />
+    </p>    
+</form>
+
+{% endblock %}
