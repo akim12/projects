@@ -35,6 +35,7 @@ class ComposerStaticInitae91ebf8b10c9c3f99c3d73e2fa9e5ac
         ),
         'M' => 
         array (
+            'MyApp\\Model\\' => 12,
             'MyApp\\Controller\\' => 17,
             'MyApp\\Classe\\' => 13,
         ),
@@ -84,6 +85,10 @@ class ComposerStaticInitae91ebf8b10c9c3f99c3d73e2fa9e5ac
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'MyApp\\Model\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/models',
         ),
         'MyApp\\Controller\\' => 
         array (

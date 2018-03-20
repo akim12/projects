@@ -17,6 +17,7 @@ return array(
     'Silex\\' => array($vendorDir . '/silex/silex/src/Silex'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
+    'MyApp\\Model\\' => array($baseDir . '/app/models'),
     'MyApp\\Controller\\' => array($baseDir . '/app/controllers'),
     'MyApp\\Classe\\' => array($baseDir . '/app/classes'),
 );
