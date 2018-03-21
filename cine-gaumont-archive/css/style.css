@@ -1,0 +1,67 @@
+
+.container-1 div, .container-2 div, .container-3 div, .box_slider{
+	border:1px solid #ccc;
+	padding:10px;box-sizing: border-box;
+}
+.box-1{
+	/*flex:2; /* prends 2 colonnes*/
+	/*order:2*/
+}
+.box-2{
+	/*flex:1;*/
+	/*order:1;*/
+}
+.box-3{
+	/*flex:1;
+	/*order:3;*/
+}
+.container-2-box{
+	/*width: 30%; /* meme chose que flex-basis: 30%;*/
+}
+.container-3-box{
+	/*flex-basis: 15%;*/
+}
+
+.box_slider{width: 100%;height: 200px;background-color: grey;}
+aside
+{background-color: yellow;border: 1px solid grey}
+main{clear: both;}
+head{clear: both;}
+
+/* ::::::::::::::: MEDIA QUERIES :::::::::*/
+/* From tablet */
+@media screen and (min-width:768px)
+{
+	.container-1{
+		display:flex;
+		/* align-items: flex-start; */
+		/* align-items: flex-end; */
+		/* align-items: center; */
+		/* flex-direction: column; */
+		}
+		.container-2{
+			display: flex;
+			/* justify-content: flex-start;
+			justify-content: flex-end;
+			justify-content: center; 
+			justify-content: space-around;*/
+			justify-content: space-between;
+		}
+} 
+
+.container_main_aside{
+	display: flex;
+	flex-direction: row;
+}
+.container-3{
+	display: flex;
+	/* flex-wrap: nowrap; */
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+
+}
+.wrapper{
+	margin:0 auto;	max-width: 1024px;
+	
+}
